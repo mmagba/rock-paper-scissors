@@ -11,3 +11,20 @@ function computerPlay(){
         return "SCISSORS";
     }
 }
+function playRound(playerSelection, computerSelection){
+
+    playerSelection=playerSelection.toUpperCase();
+    if(playerSelection===computerSelection){
+        return "draw";
+    }
+    if((playerSelection==="ROCK"&&computerSelection==="SCISSORS")||(playerSelection==="SCISSORS"&&computerSelection==="PAPER")||(playerSelection==="PAPER"&&computerSelection==="ROCK")){
+        return "player wins";
+    }
+    return "computer wins";
+
+
+}
+
+const playerSelection = "rock";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
